@@ -1,4 +1,5 @@
-#!/bin/bash
-# Look to the file glam rock
-cat metal_bands.sql | mysql -uroot -p holberton
-cat 3-glam_rock.sql | mysql -uroot -p holberton
+-- Import table first
+SOURCE metal_bands.sql;
+
+-- Run the query
+SOURCE 3-glam_rock.sql;
