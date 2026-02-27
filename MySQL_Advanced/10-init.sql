@@ -2,8 +2,8 @@
 DROP TABLE IF EXISTS numbers;
 
 CREATE TABLE IF NOT EXISTS numbers (
-    a int default 0,
-    b int default 0
+    a INT DEFAULT 0,
+    b INT DEFAULT 0
 );
 
 INSERT INTO numbers (a, b) VALUES (10, 2);

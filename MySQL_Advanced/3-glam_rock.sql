@@ -1,7 +1,11 @@
--- List glam rock bands and calculate lifespan
-SELECT band_name,
-       -- Nëse banda ka vit split, përdoret ai; në të kundërt përdoret 2023
-       IFNULL(split, 2023) - formed + 1 AS lifespan
-FROM metal_bands
-WHERE style LIKE "%Glam rock%"
-ORDER BY lifespan DESC;
+-- Lists Glam rock bands ranked by longevity up to 2024
+
+SELECT
+    band_name,
+    (2024 - formed) - IFNULL(split - formed, 0) AS lifespan
+FROM
+    metal_bands
+WHERE
+    main_style = 'Glam rock'
+ORDER BY
+    lifespan DESC;
